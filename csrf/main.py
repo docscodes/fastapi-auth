@@ -14,6 +14,7 @@ from ..database import create_all_tables, get_async_session
 from ..models import AccessToken, User
 from ..password import get_password_hash
 
+
 TOKEN_COOKIE_NAME = "token"
 CSRF_TOKEN_SECRET = "__CHANGE_THIS_WITH_YOUR_OWN_SECRET_VALUE__"
 
@@ -24,7 +25,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(lifespan=lifespan, title="fastapi-auth-csrf")
 
 
 app.add_middleware(

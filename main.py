@@ -6,11 +6,11 @@ from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from sqlalchemy import exc, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-import schemas
-from authentication import authenticate, create_access_token
-from database import create_all_tables, get_async_session
-from models import AccessToken, User
-from password import get_password_hash
+from . import schemas
+from .authentication import authenticate, create_access_token
+from .database import create_all_tables, get_async_session
+from .models import AccessToken, User
+from .password import get_password_hash
 
 
 @contextlib.asynccontextmanager

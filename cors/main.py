@@ -1,7 +1,8 @@
 from fastapi import FastAPI, Request
 from starlette.middleware.cors import CORSMiddleware
 
-app = FastAPI()
+
+app = FastAPI(title="fastapi-auth-cors")
 
 app.add_middleware(
     CORSMiddleware,
@@ -9,7 +10,7 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
-    max_age=-1,  # disable caching 
+    max_age=-1,  # disable caching
 )
 
 
