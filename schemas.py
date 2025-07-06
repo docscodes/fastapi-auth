@@ -12,6 +12,10 @@ class UserCreate(UserBase):
     password: str
 
 
+class UserUpdate(UserBase):
+    pass
+
+
 class User(UserBase):
     id: int
     hashed_password: str
